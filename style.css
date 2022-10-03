@@ -1,0 +1,77 @@
+#sec-step .accordion-button:not(.collapsed) {
+    color: #FE9313;
+    font-weight: 700;
+    font-size: 20px;
+    background: transparent;
+    box-shadow: none;
+}
+#sec-step .accordion-button::after {
+    display: none;
+}
+#sec-step .box-step .left {
+    background: #0C1B43;
+    padding: 25px;
+}
+#sec-step .box-step {
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+#sec-step .accordion-button {
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 10px 0;
+}
+#sec-step .accordion {
+    background: transparent;
+}
+#sec-step .accordion-item {
+    background: transparent;
+    color: #fff;
+    border: blanchedalmond;
+}
+#sec-step .accordion-body {
+    padding: 10px 0;
+    font-size: 22px;
+}
+#sec-step .box-step > div {
+    width: 50%;
+}
+#sec-step .box-step .right img {
+    width: 100%;
+}
+#sec-step .btn-step {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+    border: none;
+}
+#sec-step .action-step {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+}
+#sec-step .box-step .left {
+    position: relative;
+    padding-bottom: 60px;
+}
+#sec-step .accordion-button.collapsed {
+    opacity: 0.6;
+}
+
+
+@media (max-width: 768px) {
+    #sec-step .box-step > div{
+        width: 100%;
+    }
+    #sec-step .box-step {
+        flex-wrap: wrap;
+    }
+}

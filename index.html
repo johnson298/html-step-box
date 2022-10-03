@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="sec-step">
+            <div class="box-step">
+                <div class="left">
+                    <div class="accordion steps" id="accordionStep">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading1">
+                                <div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                    Bước 1: Thiết kế đồ hoạ
+                                </div>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionStep">
+                                <div class="accordion-body">
+                                    Sử dụng phần mềm chuyên dụng Solidword, Catia, 3DSMAX. Autocad để thiết kế mẫu sản phẩm
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading2">
+                                <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                    Bước 2: Thiết kế market - In nội dung
+                                </div>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionStep">
+                                <div class="accordion-body">
+                                    Sử dụng phần mềm chuyên dụng Solidword, Catia, 3DSMAX. Autocad để thiết kế mẫu sản phẩm
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading3">
+                                <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                    Bước 3: Tạo phôi pha lê
+                                </div>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionStep">
+                                <div class="accordion-body">
+                                    Sử dụng phần mềm chuyên dụng Solidword, Catia, 3DSMAX. Autocad để thiết kế mẫu sản phẩm
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading4">
+                                <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                                    Bước 4: Khắc - in nội dung
+                                </div>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionStep">
+                                <div class="accordion-body">
+                                    Sử dụng phần mềm chuyên dụng Solidword, Catia, 3DSMAX. Autocad để thiết kế mẫu sản phẩm
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading5">
+                                <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                                    Bước 5: Hoàn thiện
+                                </div>
+                            </h2>
+                            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionStep">
+                                <div class="accordion-body">
+                                    Sử dụng phần mềm chuyên dụng Solidword, Catia, 3DSMAX. Autocad để thiết kế mẫu sản phẩm
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-step">
+                        <button class="btn-step" id="prevStep">
+                            <img src="up.svg" alt="">
+                        </button>
+                        <button class="btn-step" id="nextStep">
+                            <img src="down.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="./img-step.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#prevStep').click(function() {
+            const lengthSlide = $('.accordion-item').length
+            const current =  Number($('.accordion-collapse.show').attr('id').split('collapse')[1])
+
+            $(`#collapse${current}`).collapse('show');
+            if(current > 1) {
+                $(`#collapse${current - 1}`).collapse('show');
+            } else {
+                $(`#collapse1`).collapse('show');
+            }
+        })
+        $('#nextStep').click(function() {
+            const lengthSlide = $('.accordion-item').length
+            const current =  Number($('.accordion-collapse.show').attr('id').split('collapse')[1])
+
+            $(`#collapse${current}`).collapse('show');
+
+            if(current < lengthSlide) {
+                $(`#collapse${current + 1}`).collapse('show');
+            }
+        })
+    </script>
+</body>
+</html>
