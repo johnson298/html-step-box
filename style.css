@@ -1,9 +1,13 @@
-#sec-step .accordion-button:not(.collapsed) {
+body {
+    font-family: sans-serif;
+}
+#sec-step .accordion-item.show .accordion-button {
     color: #FE9313;
     font-weight: 700;
     font-size: 20px;
     background: transparent;
     box-shadow: none;
+    opacity: 1;
 }
 #sec-step .accordion-button::after {
     display: none;
@@ -36,13 +40,15 @@
 }
 #sec-step .accordion-body {
     padding: 10px 0;
-    font-size: 22px;
+    font-size: 20px;
 }
 #sec-step .box-step > div {
     width: 50%;
 }
 #sec-step .box-step .right img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 #sec-step .btn-step {
     background: rgba(255, 255, 255, 0.5);
@@ -51,6 +57,7 @@
     height: 35px;
     margin-right: 20px;
     border: none;
+    cursor: pointer;
 }
 #sec-step .action-step {
     display: flex;
@@ -62,8 +69,14 @@
     position: relative;
     padding-bottom: 60px;
 }
-#sec-step .accordion-button.collapsed {
+#sec-step .accordion-button {
     opacity: 0.6;
+}
+#sec-step .accordion-item .accordion-collapse {
+    display: none;
+}
+#sec-step .accordion-header {
+    margin: 0;
 }
 
 
